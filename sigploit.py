@@ -1,8 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 '''
 Created on 1 Feb 2018
 
 @author: loay
+
+@editor: toxic -05-11-2022-
+
+short note update : support python 3.9
 '''
 
 import sys
@@ -124,70 +128,68 @@ X      | X     |  X    |   X   |    X  |     X |      X|\|
 
     for row in range(ROWS):
         for c in word:
-            print table[c][row],
-        print
-    print
+            print (table[c][row],)
+        print()
+    print()
 
 
 
 def mainMenu():
     os.system('clear')
     banner('SiGploit')
-    print "\033[33m[-][-]\033[0m\t\tSignaling Exploitation Framework\t\033[33m [-][-]\033[0m"
-    print "\033[33m[-][-]\033[0m\t\t\tVersion:\033[31mBETA 0.4\033[0m\t\t\033[33m [-][-]\033[0m"
-    print "\033[33m[-][-]\033[0m\t\tAuthor:\033[32mLoay AbdelRazek(@sigploit)\033[0m\t\033[33m [-][-]\033[0m\n"
-    print
-    print "Contributors:"
+    print("\033[33m[-][-]\033[0m\t\tSignaling Exploitation Framework\t\033[33m [-][-]\033[0m")
+    print("\033[33m[-][-]\033[0m\t\t\tVersion:\033[31mBETA 0.4\033[0m\t\t\033[33m [-][-]\033[0m")
+    print("\033[33m[-][-]\033[0m\t\tAuthor:\033[32mLoay AbdelRazek(@sigploit)\033[0m\t\033[33m [-][-]\033[0m\n")
+    print("\n")
+    print("Contributors:")
+    print("\t\033[31mRosalia D'Alessandro - TelecomItalia\033[0m")
+    print("\n")
+    print("\n")
+    print("\n")
+    print("\n")
+    print("\n")
+    print("   Module".rjust(10) + "\t\t\tDescription")
+    print("   --------                --------------------")
+    print("0) SS7".rjust(8) + "\t\t2G/3G Voice and SMS attacks")
+    print("1) Diameter".rjust(13) + "\t\t4G Data attacks")
+    print("2) GTP".rjust(8) + "\t\t3G Data attacks")
+    print("3) SIP".rjust(8) + "\t\t4G VoLTE attacks")
+    print("\n")
+    print("or quit to exit SiGploit\n".rjust(28))
 
-    print "\t\033[31mRosalia D'Alessandro - TelecomItalia\033[0m"
-    print
-    print
-    print
-    print
-    print
-    print "   Module".rjust(10) + "\t\t\tDescription"
-    print "   --------                --------------------"
-    print "0) SS7".rjust(8) + "\t\t2G/3G Voice and SMS attacks"
-    print "1) Diameter".rjust(13) + "\t\t4G Data attacks"
-    print "2) GTP".rjust(8) + "\t\t3G Data attacks"
-    print "3) SIP".rjust(8) + "\t\t4G VoLTE attacks"
-
-    print
-    print "or quit to exit SiGploit\n".rjust(28)
-
-    choice = raw_input("\033[34msig\033[0m\033[37m>\033[0m ")
+    choice = input("\033[34msig\033[0m\033[37m>\033[0m ")
 
     if choice == "0":
         os.system('clear')
         ss7main.attacksMenu()
 
     if choice == "1":
-        print "\n\033[34m[*]\033[0mDiameter will be updated in version 2 release.."
-        print "\033[34m[*]\033[0mGoing back to Main Menu"
+        print("\n\033[34m[*]\033[0mDiameter will be updated in version 2 release..")
+        print("\033[34m[*]\033[0mGoing back to Main Menu")
         time.sleep(2)
         mainMenu()
     elif choice == "2":
-        print "\n\033[34m[*]\033[0mGTP will be updated in version 3 release.."
-        print "\033[34m[*]\033[0mGoing back to Main Menu"
+        print("\n\033[34m[*]\033[0mGTP will be updated in version 3 release..")
+        print("\033[34m[*]\033[0mGoing back to Main Menu")
         time.sleep(2)
         mainMenu()
     elif choice == "3":
-        print "\n\033[34m[*]\033[0mSIP will be updated in version 4 release.."
-        print "\033[34m[*]\033[0mGoing back to Main Menu"
+        print("\n\033[34m[*]\033[0mSIP will be updated in version 4 release..")
+        print("\033[34m[*]\033[0mGoing back to Main Menu")
         time.sleep(2)
         mainMenu()
     elif choice == "quit" or choice == "exit":
-        print '\nYou are now exiting SiGploit...'
+        print('\nYou are now exiting SiGploit...')
         time.sleep(1)
         sys.exit(0)
     else:
-        print '\n\033[31m[-]Error:\033[0m Please Enter a Valid Choice (0 - 3)'
+        print('\n\033[31m[-]Error:\033[0m Please Enter a Valid Choice (0 - 3)')
         time.sleep(2)
         mainMenu()
 
 
 def signal_handler(signal, frame):
-    print '\nYou are now exiting SiGploit...'
+    print('\nYou are now exiting SiGploit...')
     time.sleep(1)
     sys.exit(0)
 

@@ -39,7 +39,7 @@ Note: In order to test SS7 attacks, you need to have an SS7 access or you can te
 ## Installation and requirements
 The requirements for this project are:
 
-    1) Python 2.7
+    1) Python 2.7 / Python 3.9
     2) Java version 1.7 +
     3) Linux machine (Windows doesnt support SCTP)
 
