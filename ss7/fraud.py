@@ -13,34 +13,31 @@ import os
 import time
 import sigploit
 import ss7main
-
+import helpers
 from subprocess import *
 
 
-simsi_path = os.path.join(os.getcwd(), 'ss7/attacks/fraud/simsi')
-mtsms_path = os.path.join(os.getcwd(), 'ss7/attacks/fraud/mtsms')
-cl_path = os.path.join(os.getcwd(), 'ss7/attacks/fraud/cl')
+simsi_path = helpers.get_ss7_attacks_fraud_simsi_payload()		#os.path.join(os.getcwd(), 'ss7/attacks/fraud/simsi')
+mtsms_path = helpers.get_ss7_attacks_fraud_mtsms_payload()		#os.path.join(os.getcwd(), 'ss7/attacks/fraud/mtsms')
+cl_path = helpers.get_ss7_attacks_fraud_cl_payload()			#os.path.join(os.getcwd(), 'ss7/attacks/fraud/cl')
 
 
 def simsi():
-	
-	jar_file = 'SendIMSI.jar'
-
 	try:
-		sendIMSI = check_call(['java','-jar', os.path.join(simsi_path,jar_file)])
+		sendIMSI = check_call(['java', '-jar', simsi_path])
 		if sendIMSI == 0:
 			fr = input('\nWould you like to go back to Fraud Menu? (y/n): ')
 			if fr == 'y' or fr == 'yes':
 				ss7main.Fraud()
 			elif fr == 'n' or fr == 'no':
 				attack_menu = input('Would you like to choose another attacks category? (y/n): ')
-				if attack_menu == 'y'or attack_menu =='yes':
+				if attack_menu == 'y' or attack_menu == 'yes':
 					ss7main.attacksMenu()
-				elif attack_menu == 'n' or attack_menu =='no':
+				elif attack_menu == 'n' or attack_menu == 'no':
 					main_menu = input('Would you like to go back to the main menu? (y/exit): ')
-					if main_menu == 'y' or main_menu =='yes':
+					if main_menu == 'y' or main_menu == 'yes':
 						sigploit.mainMenu()
-					elif main_menu =='exit':
+					elif main_menu == 'exit':
 						print('TCAP End...')
 						sys.exit(0)
 
@@ -51,24 +48,21 @@ def simsi():
 
 
 def mtsms():
-	
-	jar_file = 'MTForwardSMS.jar'
-
 	try:
-		mtForwardSMS = check_call(['java','-jar', os.path.join(mtsms_path,jar_file)])
+		mtForwardSMS = check_call(['java', '-jar', mtsms_path])
 		if mtForwardSMS == 0:
 			fr = input('\nWould you like to go back to Fraud Menu? (y/n): ')
 			if fr == 'y' or fr == 'yes':
 				ss7main.Fraud()
 			elif fr == 'n' or fr == 'no':
 				attack_menu = input('Would you like to choose another attacks category? (y/n): ')
-				if attack_menu == 'y'or attack_menu =='yes':
+				if attack_menu == 'y' or attack_menu == 'yes':
 					ss7main.attacksMenu()
-				elif attack_menu == 'n' or attack_menu =='no':
+				elif attack_menu == 'n' or attack_menu == 'no':
 					main_menu = input('Would you like to go back to the main menu? (y/exit): ')
-					if main_menu == 'y' or main_menu =='yes':
+					if main_menu == 'y' or main_menu == 'yes':
 						sigploit.mainMenu()
-					elif main_menu =='exit':
+					elif main_menu == 'exit':
 						print('TCAP End...')
 						sys.exit(0)
 
@@ -79,11 +73,8 @@ def mtsms():
 	
 
 def cl():
-	
-	jar_file = 'CancelLocation.jar'
-
 	try:
-		cancelLocation = check_call(['java', '-jar', os.path.join(cl_path, jar_file)])
+		cancelLocation = check_call(['java', '-jar', cl_path])
 		if cancelLocation == 0:
 			fr = input('\nWould you like to go back to Fraud Menu? (y/n): ')
 			if fr == 'y' or fr == 'yes':

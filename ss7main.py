@@ -49,8 +49,6 @@ def LocationTracking():
         ss7.tracking.srism()
     elif choice == "3":
         ss7.tracking.ati()
-    elif choice == "4":
-        ss7.tracking.srigprs()
     elif choice == "back":
         attacksMenu()
     else:

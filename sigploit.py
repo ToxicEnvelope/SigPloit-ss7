@@ -124,14 +124,13 @@ X      | X     |  X    |   X   |    X  |     X |      X|\|
         if '|' in form:
             table[form[-2]] = form[:-3].split('|')
 
-    ROWS = len(table.values()[0])
+    number_of_rows = len(list(table.values())[0])
 
-    for row in range(ROWS):
+    for row in range(number_of_rows):
         for c in word:
-            print (table[c][row],)
+            print(table[c][row],)
         print()
     print()
-
 
 
 def mainMenu():
@@ -143,9 +142,7 @@ def mainMenu():
     print("\n")
     print("Contributors:")
     print("\t\033[31mRosalia D'Alessandro - TelecomItalia\033[0m")
-    print("\n")
-    print("\n")
-    print("\n")
+    print("\t\033[31mYahav Hoffman - T0x1c3nv1ope\033[0m")
     print("\n")
     print("\n")
     print("   Module".rjust(10) + "\t\t\tDescription")

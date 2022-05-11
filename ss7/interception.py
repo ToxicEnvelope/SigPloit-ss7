@@ -13,20 +13,17 @@ import os
 import time
 import sigploit
 import ss7main
-
+import helpers
 
 from subprocess import *
 
 
-ul_path = os.path.join(os.getcwd(),'ss7/attacks/interception/ul')
+ul_path = helpers.get_ss7_attacks_interception_ul_payload()		#os.path.join(os.getcwd(),'ss7/attacks/interception/ul')
 
 
 def ul():
-	
-	jar_file = 'UpdateLocation.jar'
-
 	try:
-		updateLocation = check_call(['java', '-jar', os.path.join(ul_path, jar_file)])
+		updateLocation = check_call(['java', '-jar', ul_path])
 		if updateLocation == 0:
 			it = input('\nWould you like to go back to Interception Menu? (y/n): ')
 			if it == 'y' or it == 'yes':
