@@ -42,7 +42,7 @@ def purge():
 						sys.exit(0)
 
 	except CalledProcessError as e:
-		print("\033[31m[-]\033[0mError:PurgeMS Failed to Launch, ", e.message)
+		print("\033[31m[-]\033[0mError:PurgeMS Failed to Launch, ", e)
 		time.sleep(2)
 		ss7main.DoS()
 

@@ -42,7 +42,7 @@ def ul():
 						sys.exit(0)
 
 	except CalledProcessError as e:
-		print("\033[31m[-]Error:\033[0mUpdateLocation Failed to Launch, Error: ", e.message)
+		print("\033[31m[-]Error:\033[0mUpdateLocation Failed to Launch, Error: ", e)
 		time.sleep(2)
 		ss7main.Interception()
 	
